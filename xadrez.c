@@ -1,6 +1,8 @@
 // Desafio Movimentação de Peças de Xadrez
 #include <stdio.h>
 
+/* Função recursiva para movimentação de peças como Torre e Rainha
+usando como parâmetros o número de casas e um ponteiro pra direção*/
 void movimentaPeca(int casas, char *direcao)
 
 {
@@ -11,9 +13,11 @@ void movimentaPeca(int casas, char *direcao)
     }
 }
 
+/* Função para movimentação do Bispo
+usando como parâmetros o número de casas e um ponteiro para as direções*/
 void movimentaBispo(int casas, char *vertical, char *horizontal)
 {
-    int j;
+    int j; // Variável do loop interno declarada fora do escopo para poder ser decrementada posteriormente e as impressões ficarem sequenciais
     for (int i = 0; i < casas; i++)
     {
         printf("%s\n", vertical);
@@ -30,12 +34,9 @@ void movimentaCavalo(char *direcao1, char *direcao2)
     int casas = 3;
     for (int i = 0; i < casas; i++)
     {
-        i < (casas - 1) ? printf("Cima\n") : printf("Direita\n");
+        i < (casas - 1) ? printf("Cima\n") : printf("Direita\n"); // Verifica se o tamanho de i é menor que casas - 1 para executar o true duas vezes e o false por último
     }
 }
-
-// Utilize loops aninhados com múltiplas variáveis e/ou condições para
-// simular o movimento do Cavalo em "L" (duas casas para cima e uma para a direita).
 
 int main()
 {
